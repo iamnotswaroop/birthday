@@ -1,0 +1,1021 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Birthday Surprise 🌸🧿</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Sacramento&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{scroll-behavior:smooth;}
+
+body{
+    background:#fff1f7;
+    color:#542b3d;
+    font-family:"Poppins",sans-serif;
+    overflow-x:hidden;
+}
+
+.background{
+    position:fixed;
+    inset:0;
+    z-index:-20;
+    overflow:hidden;
+    background:
+    radial-gradient(circle at 10% 20%,#ffd1e4,transparent 35%),
+    radial-gradient(circle at 90% 80%,#ffc1da,transparent 35%),
+    linear-gradient(135deg,#fff9fc,#ffe7f1);
+}
+
+.glow{
+    position:absolute;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    filter:blur(85px);
+    opacity:.4;
+    animation:glowMove 12s infinite alternate ease-in-out;
+}
+
+.glow.one{
+    background:#ff8fb8;
+    top:-130px;
+    left:-100px;
+}
+
+.glow.two{
+    background:#f36f9e;
+    right:-120px;
+    bottom:-130px;
+    animation-delay:3s;
+}
+
+@keyframes glowMove{
+    from{transform:translate(0,0) scale(1);}
+    to{transform:translate(50px,-40px) scale(1.25);}
+}
+
+#petals{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:5;
+    overflow:hidden;
+}
+
+.petal{
+    position:absolute;
+    top:-30px;
+    width:11px;
+    height:18px;
+    background:#f58bb2;
+    border-radius:80% 20% 80% 20%;
+    opacity:.55;
+    animation:fall linear infinite;
+}
+
+@keyframes fall{
+    from{transform:translateY(-40px) translateX(0) rotate(0deg);}
+    to{transform:translateY(110vh) translateX(100px) rotate(600deg);}
+}
+
+#sparkles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:6;
+}
+
+.spark{
+    position:absolute;
+    color:white;
+    font-size:13px;
+    animation:sparkle 3s infinite ease-in-out;
+}
+
+@keyframes sparkle{
+    0%,100%{opacity:0;transform:scale(.4);}
+    50%{opacity:1;transform:scale(1.4);}
+}
+
+.music-button{
+    position:fixed;
+    top:15px;
+    right:15px;
+    width:48px;
+    height:48px;
+    border:none;
+    border-radius:50%;
+    background:rgba(255,255,255,.88);
+    backdrop-filter:blur(12px);
+    box-shadow:0 8px 25px rgba(160,50,90,.18);
+    font-size:19px;
+    cursor:pointer;
+    z-index:100;
+    transition:.3s;
+}
+
+.music-button:active{transform:scale(.88);}
+
+section{
+    min-height:100svh;
+    padding:75px 18px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+}
+
+.container{
+    width:100%;
+    max-width:1000px;
+    text-align:center;
+}
+
+.hero{min-height:100svh;}
+
+.hero-content{
+    animation:heroEnter 1.7s ease forwards;
+}
+
+@keyframes heroEnter{
+    from{opacity:0;transform:translateY(45px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+.mini-title{
+    font-size:11px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    color:#c4517d;
+    margin-bottom:18px;
+}
+
+.hero h1{
+    font-family:"Sacramento",cursive;
+    font-size:clamp(80px,21vw,150px);
+    font-weight:400;
+    line-height:.8;
+    color:#d94e82;
+    text-shadow:0 10px 30px rgba(210,70,120,.15);
+}
+
+.hero h2{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(28px,8vw,52px);
+    font-weight:500;
+    color:#633246;
+    margin-top:18px;
+}
+
+.hero p{
+    max-width:520px;
+    margin:25px auto;
+    color:#8e6878;
+    font-size:14px;
+    line-height:1.9;
+}
+
+.eye{
+    display:inline-block;
+    font-size:28px;
+    margin:0 5px;
+    animation:eyeFloat 3s infinite ease-in-out;
+}
+
+@keyframes eyeFloat{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-6px);}
+}
+
+.main-btn{
+    border:none;
+    padding:15px 30px;
+    border-radius:50px;
+    background:linear-gradient(135deg,#ed709d,#d84e82);
+    color:white;
+    font-family:"Poppins",sans-serif;
+    font-size:14px;
+    box-shadow:0 12px 30px rgba(216,78,130,.25);
+    cursor:pointer;
+    transition:.3s;
+}
+
+.main-btn:hover{transform:translateY(-3px);}
+.main-btn:active{transform:scale(.94);}
+
+.section-label{
+    color:#d35a86;
+    font-size:11px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:14px;
+}
+
+h2{
+    font-family:"Cormorant Garamond",serif;
+    font-size:clamp(48px,12vw,78px);
+    font-weight:500;
+    color:#653348;
+    line-height:.95;
+}
+
+.description{
+    max-width:620px;
+    margin:20px auto;
+    color:#8e6878;
+    font-size:14px;
+    line-height:1.9;
+}
+
+.birthday-card{
+    max-width:650px;
+    margin:38px auto;
+    padding:45px 25px;
+    border-radius:30px;
+    background:rgba(255,255,255,.7);
+    border:1px solid rgba(255,255,255,.9);
+    backdrop-filter:blur(15px);
+    box-shadow:0 25px 70px rgba(150,55,95,.13);
+    animation:floatingCard 5s infinite ease-in-out;
+}
+
+@keyframes floatingCard{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-9px);}
+}
+
+.cake{
+    font-size:55px;
+    animation:cakeBounce 2s infinite;
+}
+
+@keyframes cakeBounce{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-8px);}
+}
+
+.birthday-card h3{
+    font-family:"Sacramento",cursive;
+    font-size:60px;
+    font-weight:400;
+    color:#dc5588;
+    margin-top:10px;
+}
+
+.birthday-card p{
+    color:#896473;
+    font-size:14px;
+    line-height:1.9;
+    margin-top:12px;
+}
+
+.chakis{
+    font-family:"Sacramento",cursive;
+    font-size:38px;
+    color:#d95084;
+    margin-top:20px;
+}
+
+.gallery{
+    margin-top:40px;
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:16px;
+}
+
+.photo-card{
+    position:relative;    
+    overflow:hidden;
+    border-radius:23px;
+    background:#ffdce9;
+    box-shadow:0 12px 35px rgba(150,55,90,.13);
+    transition:transform .5s ease,box-shadow .5s ease;
+    opacity:0;
+    transform:translateY(45px);
+}
+
+.photo-card.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+.photo-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:transform .8s ease;
+}
+
+.photo-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 25px 50px rgba(150,55,90,.22);
+}
+
+.photo-card:hover img{transform:scale(1.08);}
+
+.photo-caption{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    padding:40px 12px 14px;
+    color:white;
+    font-size:12px;
+    text-align:center;
+    background:linear-gradient(transparent,rgba(70,20,40,.75));
+}
+
+.envelope-area{
+    max-width:650px;
+    margin:40px auto;
+}
+
+.envelope{
+    padding:45px 25px;
+    border-radius:28px;
+    background:linear-gradient(145deg,#ffffff,#ffe7f1);
+    box-shadow:0 25px 70px rgba(150,55,95,.14);
+    border:1px solid rgba(255,255,255,.9);
+}
+
+.envelope-icon{
+    font-size:65px;
+    animation:envelopeFloat 3s infinite ease-in-out;
+}
+
+@keyframes envelopeFloat{
+    0%,100%{transform:translateY(0) rotate(0);}
+    50%{transform:translateY(-8px) rotate(2deg);}
+}
+
+.envelope h3{
+    font-family:"Cormorant Garamond",serif;
+    font-size:35px;
+    margin:10px 0;
+}
+
+.envelope p{
+    color:#8c6676;
+    font-size:13px;
+    line-height:1.9;
+}
+
+.hidden-message{
+    display:none;
+    margin-top:30px;
+    padding:28px 10px;
+    border-top:1px solid #f1bfd1;
+    font-family:"Cormorant Garamond",serif;
+    font-size:22px;
+    line-height:1.8;
+    color:#6c3a50;
+}
+
+.hidden-message.show{
+    display:block;
+    animation:messageReveal 1.5s ease forwards;
+}
+
+@keyframes messageReveal{
+    from{opacity:0;transform:translateY(30px);}
+    to{opacity:1;transform:translateY(0);}
+}
+
+.final-section{text-align:center;}
+
+.final-heart{
+    font-size:65px;
+    animation:heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat{
+    0%,100%{transform:scale(1);}
+    15%{transform:scale(1.16);}
+    30%{transform:scale(1);}
+    45%{transform:scale(1.1);}
+}
+
+.final-title{
+    font-family:"Sacramento",cursive;
+    font-size:clamp(60px,16vw,105px);
+    color:#d95084;
+    margin-top:15px;
+}
+
+.final-text{
+    max-width:570px;
+    margin:20px auto 35px;
+    color:#896575;
+    font-size:14px;
+    line-height:2;
+}
+
+footer{
+    padding:35px 20px;
+    text-align:center;
+    color:#b48799;
+    font-size:10px;
+    letter-spacing:3px;
+}
+
+.confetti{
+    position:fixed;
+    top:-30px;
+    width:9px;
+    height:14px;
+    z-index:200;
+    pointer-events:none;
+    animation:confettiFall 3s linear forwards;
+}
+
+@keyframes confettiFall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+        opacity:0;
+    }
+}
+
+@media(max-width:600px){
+    section{padding:75px 16px;}
+    .gallery{grid-template-columns:1fr;gap:18px;}
+    .photo-card{height:390px;border-radius:24px;}
+    .photo-caption{font-size:11px;padding:35px 10px 12px;}
+}
+
+@media(max-width:360px){
+    .photo-card{height:340px;}
+    .hero h1{font-size:78px;}
+    .birthday-card h3{font-size:52px;}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+
+<div class="background">
+    <div class="glow one"></div>
+    <div class="glow two"></div>
+</div>
+
+<div id="petals"></div>
+<div id="sparkles"></div>
+
+<!-- MUSIC -->
+
+<button class="music-button" id="musicButton" onclick="toggleMusic()">🎵</button>
+
+<audio id="bgMusic" loop>
+    <source src="music/birthday.mp3" type="audio/mpeg">
+</audio>
+
+<!-- HERO -->
+
+<section class="hero">
+    <div class="container hero-content">
+
+        <div class="mini-title">
+            A little surprise
+            <span class="eye">🧿</span>
+        </div>
+
+        <h1>Hey,</h1>
+
+        <h2 class="person-name"></h2>
+
+        <p>
+            This little corner of the internet
+            exists for one simple reason...
+            <br>
+            to make your day a little more special.
+            <span class="eye">🧿</span>
+        </p>
+
+        <button class="main-btn" onclick="beginExperience()">
+            ✨ Open Your Surprise
+        </button>
+
+        <div class="chakis">
+            For <span class="person-name"></span> 🧿
+        </div>
+
+    </div>
+</section>
+
+<!-- BIRTHDAY -->
+
+<section id="birthday">
+    <div class="container">
+
+        <div class="section-label">A special day 🧿</div>
+
+        <h2>Today Is Yours</h2>
+
+        <p class="description">
+            Some days arrive quietly.
+            <br>
+            And then there are days that deserve
+            a little extra sparkle.
+        </p>
+
+        <div class="birthday-card">
+
+            <div class="cake">🎂</div>
+
+            <h3>Happy Birthday!</h3>
+
+            <p>
+                May this year bring you beautiful
+                surprises, peaceful moments,
+                unforgettable memories,
+                and plenty of reasons to smile.
+            </p>
+
+            <div class="chakis">
+                Happy Birthday, <span class="person-name"></span> 🌸🧿
+            </div>
+
+        </div>
+
+        <button class="main-btn" onclick="goTo('memories')">
+            📸 See the little memories
+        </button>
+
+    </div>
+</section>
+
+<!-- MEMORIES -->
+
+<section id="memories">
+    <div class="container">
+
+        <div class="section-label">Little moments 🧿</div>
+
+        <h2>Moments Worth Keeping</h2>
+
+        <p class="description">
+            Thirty-seven little windows
+            into some beautiful moments.
+            <br>
+            Take your time, <span class="person-name"></span>. 🌸
+        </p>
+
+        <div class="gallery" id="gallery"></div>
+
+        <br><br>
+
+        <div class="chakis">
+            Still scrolling, <span class="person-name"></span>? 🧿
+        </div>
+
+        <br>
+
+        <button class="main-btn" onclick="goTo('message')">
+            💌 There's Something Else
+        </button>
+
+    </div>
+</section>
+
+<!-- MESSAGE -->
+
+<section id="message">
+    <div class="container">
+
+        <div class="section-label">One last thing 🧿</div>
+
+        <h2>You Found It 💌</h2>
+
+        <p class="description">
+            Well... since you've come this far,
+            there's one more little thing waiting.
+        </p>
+
+        <div class="envelope-area">
+            <div class="envelope">
+
+                <div class="envelope-icon">💌</div>
+
+                <h3>
+                    A message for <span class="person-name"></span>
+                </h3>
+
+                <p>
+                    Tap the button when you're ready.
+                    <br>🧿
+                </p>
+
+                <br>
+
+                <button class="main-btn" onclick="openMessage()">
+                    Open 💗
+                </button>
+
+                <div class="hidden-message" id="hiddenMessage">
+
+                    <p>
+                        Some people have a way of making
+                        ordinary days feel a little brighter.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Some moments become memories
+                        without us even realizing it.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        And some people quietly become
+                        important simply by being themselves.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        So today, <span class="person-name"></span>,
+                        I hope you get all the happiness you deserve.
+                    </p>
+
+                    <br>
+
+                    <p>
+                        Keep smiling.
+                        Keep being you.
+                        And make this year unforgettable. 🧿
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <button class="main-btn" onclick="goTo('final')">
+            ✨ One More Surprise
+        </button>
+
+    </div>
+</section>
+
+<!-- FINAL -->
+
+<section id="final" class="final-section">
+    <div class="container">
+
+        <div class="final-heart">💗</div>
+
+        <div class="section-label">Before you go 🧿</div>
+
+        <div class="final-title">Happy Birthday</div>
+
+        <p class="final-text">
+            Some people deserve more than
+            just a birthday wish.
+            <br><br>
+            So here's a tiny little corner of the internet,
+            made just to make today a little more special.
+            <br><br>
+            I hope you smile when you look back at this.
+            <br><br>
+            Stay happy, <span class="person-name"></span>. 🌸🧿
+        </p>
+
+        <button class="main-btn" onclick="celebrate()">
+            🎉 One Last Click
+        </button>
+
+        <div id="finalMessage"
+        style="margin-top:25px;font-family:'Sacramento';font-size:38px;color:#d95084;">
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    FOR <span class="person-name"></span> 🧿
+    &nbsp; • &nbsp;
+    MADE WITH A LITTLE EXTRA THOUGHT 🌸
+</footer>
+
+<script>
+
+/* ==========================================
+   PERSONALIZE YOUR BIRTHDAY WEBSITE HERE
+   ========================================== */
+
+const personName = "YOUR NAME";
+
+const photoCaptions = [
+    "A little moment ✨",
+    "One worth keeping 🌸",
+    "A favourite memory 🧿",
+    "A special moment ✨",
+    "Just because 🌷",
+    "A beautiful memory 💕",
+    "Still smiling 🌸",
+    "This deserved a place here 🧿",
+    "A little memory 💗",
+    "One more ✨",
+    "Another little moment 🌷",
+    "Worth remembering 🧿",
+    "A good one 🌸",
+    "One of the special ones ✨",
+    "Together 🧿💗",
+    "A tiny piece of today 🌷",
+    "Another favourite 🌸",
+    "This one belongs here 🧿",
+    "A moment to remember 🦋",
+    "Just a little something ✨",
+    "One more memory 🌸",
+    "This made the list 🧿",
+    "A little happiness 💕",
+    "One for the collection 🌷",
+    "A moment worth keeping ✨",
+    "Another favourite 🌸",
+    "Still a good one 🧿",
+    "This one had to be here 🌷",
+    "A little sparkle ✨",
+    "Another one 💕",
+    "A moment like this 🌸",
+    "Sleepy moments 🧿",
+    "Almost there ✨",
+    "Another little memory 💗",
+    "One more 🌷",
+    "Almost the end 🌸",
+    "And finally... 🧿💕"
+];
+
+/* ==========================================
+   UPDATE NAME AUTOMATICALLY
+   ========================================== */
+
+document.querySelectorAll(".person-name").forEach(element => {
+    element.textContent = personName;
+});
+
+document.title = `For ${personName} 🌸🧿`;
+
+/* ==========================================
+   CREATE 37 PHOTO CARDS AUTOMATICALLY
+   ========================================== */
+
+const gallery = document.getElementById("gallery");
+
+photoCaptions.forEach((caption, index) => {
+
+    const photoNumber = index + 1;
+
+    const card = document.createElement("div");
+    card.className = "photo-card";
+
+    const img = document.createElement("img");
+    img.src = `photos/photo${photoNumber}.gif`;
+    
+    img.alt = `Memory ${photoNumber}`;
+    img.loading = "lazy";
+
+    const captionElement = document.createElement("div");
+    captionElement.className = "photo-caption";
+    captionElement.textContent = caption;
+
+    card.appendChild(img);
+    card.appendChild(captionElement);
+
+    gallery.appendChild(card);
+
+});
+
+/* ==========================================
+   PETALS
+   ========================================== */
+
+const petals = document.getElementById("petals");
+
+for(let i=0;i<35;i++){
+
+    const petal = document.createElement("div");
+
+    petal.className = "petal";
+
+    petal.style.left = Math.random()*100+"%";
+    petal.style.animationDuration = (7+Math.random()*8)+"s";
+    petal.style.animationDelay = Math.random()*8+"s";
+    petal.style.opacity = .25+Math.random()*.5;
+
+    petals.appendChild(petal);
+}
+
+/* ==========================================
+   SPARKLES
+   ========================================== */
+
+const sparkleContainer = document.getElementById("sparkles");
+
+for(let i=0;i<45;i++){
+
+    const sparkle = document.createElement("div");
+
+    sparkle.className = "spark";
+    sparkle.innerHTML = "✦";
+
+    sparkle.style.left = Math.random()*100+"%";
+    sparkle.style.top = Math.random()*100+"%";
+    sparkle.style.animationDelay = Math.random()*4+"s";
+
+    sparkleContainer.appendChild(sparkle);
+}
+
+/* ==========================================
+   START EXPERIENCE
+   ========================================== */
+
+function beginExperience(){
+
+    goTo("birthday");
+    createConfetti();
+
+}
+
+/* ==========================================
+   SCROLL
+   ========================================== */
+
+function goTo(id){
+
+    const element = document.getElementById(id);
+
+    if(element){
+
+        element.scrollIntoView({
+            behavior:"smooth"
+        });
+
+    }
+
+}
+
+/* ==========================================
+   PHOTO ANIMATION
+   ========================================== */
+
+const photoCards = document.querySelectorAll(".photo-card");
+
+const observer = new IntersectionObserver(
+
+function(entries){
+
+    entries.forEach(function(entry){
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+
+            observer.unobserve(entry.target);
+
+        }
+
+    });
+
+},
+
+{threshold:.12}
+
+);
+
+photoCards.forEach(card => observer.observe(card));
+
+/* ==========================================
+   OPEN MESSAGE
+   ========================================== */
+
+function openMessage(){
+
+    const message = document.getElementById("hiddenMessage");
+
+    message.classList.add("show");
+
+    createConfetti();
+
+}
+
+/* ==========================================
+   CONFETTI
+   ========================================== */
+
+function createConfetti(){
+
+    const symbols = [
+        "💗","🌸","✨","🎀","💕","🌷","🦋","🧿"
+    ];
+
+    for(let i=0;i<50;i++){
+
+        const piece = document.createElement("div");
+
+        piece.className = "confetti";
+
+        piece.innerHTML = symbols[
+            Math.floor(Math.random()*symbols.length)
+        ];
+
+        piece.style.left = Math.random()*100+"%";
+        piece.style.fontSize = (10+Math.random()*16)+"px";
+        piece.style.animationDuration = (2+Math.random()*2)+"s";
+
+        document.body.appendChild(piece);
+
+        setTimeout(function(){
+            piece.remove();
+        },4500);
+
+    }
+
+}
+
+/* ==========================================
+   FINAL SURPRISE
+   ========================================== */
+
+function celebrate(){
+
+    createConfetti();
+
+    const final = document.getElementById("finalMessage");
+
+    final.innerHTML = `Keep smiling, ${personName}. 🌸`;
+
+    setTimeout(function(){
+
+        final.innerHTML = "And have the happiest birthday. 🧿💗";
+
+    },1800);
+
+}
+
+/* ==========================================
+   MUSIC
+   ========================================== */
+
+let musicPlaying = false;
+
+function toggleMusic(){
+
+    const music = document.getElementById("bgMusic");
+
+    const button = document.getElementById("musicButton");
+
+    if(musicPlaying){
+
+        music.pause();
+
+        button.innerHTML = "🎵";
+
+        musicPlaying = false;
+
+    }
+
+    else{
+
+        music.play()
+
+        .then(function(){
+
+            button.innerHTML = "🔊";
+
+            musicPlaying = true;
+
+        })
+
+        .catch(function(){
+
+            alert("Please check your music file and try again.");
+
+        });
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>

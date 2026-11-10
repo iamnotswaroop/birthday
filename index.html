@@ -1,1021 +1,1030 @@
 
-<!DOCTYPE html>
-<html lang="en">
+    <!DOCTYPE html>
+    <html lang="en">
 
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Birthday Surprise 🌸🧿</title>
+    <title>Birthday Surprise 🌸🧿</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Sacramento&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&family=Sacramento&display=swap" rel="stylesheet">
 
-<style>
+    <style>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{scroll-behavior:smooth;}
-
-body{
-    background:#fff1f7;
-    color:#542b3d;
-    font-family:"Poppins",sans-serif;
-    overflow-x:hidden;
-}
-
-.background{
-    position:fixed;
-    inset:0;
-    z-index:-20;
-    overflow:hidden;
-    background:
-    radial-gradient(circle at 10% 20%,#ffd1e4,transparent 35%),
-    radial-gradient(circle at 90% 80%,#ffc1da,transparent 35%),
-    linear-gradient(135deg,#fff9fc,#ffe7f1);
-}
-
-.glow{
-    position:absolute;
-    width:300px;
-    height:300px;
-    border-radius:50%;
-    filter:blur(85px);
-    opacity:.4;
-    animation:glowMove 12s infinite alternate ease-in-out;
-}
-
-.glow.one{
-    background:#ff8fb8;
-    top:-130px;
-    left:-100px;
-}
-
-.glow.two{
-    background:#f36f9e;
-    right:-120px;
-    bottom:-130px;
-    animation-delay:3s;
-}
-
-@keyframes glowMove{
-    from{transform:translate(0,0) scale(1);}
-    to{transform:translate(50px,-40px) scale(1.25);}
-}
-
-#petals{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:5;
-    overflow:hidden;
-}
-
-.petal{
-    position:absolute;
-    top:-30px;
-    width:11px;
-    height:18px;
-    background:#f58bb2;
-    border-radius:80% 20% 80% 20%;
-    opacity:.55;
-    animation:fall linear infinite;
-}
-
-@keyframes fall{
-    from{transform:translateY(-40px) translateX(0) rotate(0deg);}
-    to{transform:translateY(110vh) translateX(100px) rotate(600deg);}
-}
-
-#sparkles{
-    position:fixed;
-    inset:0;
-    pointer-events:none;
-    z-index:6;
-}
-
-.spark{
-    position:absolute;
-    color:white;
-    font-size:13px;
-    animation:sparkle 3s infinite ease-in-out;
-}
-
-@keyframes sparkle{
-    0%,100%{opacity:0;transform:scale(.4);}
-    50%{opacity:1;transform:scale(1.4);}
-}
-
-.music-button{
-    position:fixed;
-    top:15px;
-    right:15px;
-    width:48px;
-    height:48px;
-    border:none;
-    border-radius:50%;
-    background:rgba(255,255,255,.88);
-    backdrop-filter:blur(12px);
-    box-shadow:0 8px 25px rgba(160,50,90,.18);
-    font-size:19px;
-    cursor:pointer;
-    z-index:100;
-    transition:.3s;
-}
-
-.music-button:active{transform:scale(.88);}
-
-section{
-    min-height:100svh;
-    padding:75px 18px;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    position:relative;
-}
-
-.container{
-    width:100%;
-    max-width:1000px;
-    text-align:center;
-}
-
-.hero{min-height:100svh;}
-
-.hero-content{
-    animation:heroEnter 1.7s ease forwards;
-}
-
-@keyframes heroEnter{
-    from{opacity:0;transform:translateY(45px);}
-    to{opacity:1;transform:translateY(0);}
-}
-
-.mini-title{
-    font-size:11px;
-    letter-spacing:4px;
-    text-transform:uppercase;
-    color:#c4517d;
-    margin-bottom:18px;
-}
-
-.hero h1{
-    font-family:"Sacramento",cursive;
-    font-size:clamp(80px,21vw,150px);
-    font-weight:400;
-    line-height:.8;
-    color:#d94e82;
-    text-shadow:0 10px 30px rgba(210,70,120,.15);
-}
-
-.hero h2{
-    font-family:"Cormorant Garamond",serif;
-    font-size:clamp(28px,8vw,52px);
-    font-weight:500;
-    color:#633246;
-    margin-top:18px;
-}
-
-.hero p{
-    max-width:520px;
-    margin:25px auto;
-    color:#8e6878;
-    font-size:14px;
-    line-height:1.9;
-}
-
-.eye{
-    display:inline-block;
-    font-size:28px;
-    margin:0 5px;
-    animation:eyeFloat 3s infinite ease-in-out;
-}
-
-@keyframes eyeFloat{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-6px);}
-}
-
-.main-btn{
-    border:none;
-    padding:15px 30px;
-    border-radius:50px;
-    background:linear-gradient(135deg,#ed709d,#d84e82);
-    color:white;
-    font-family:"Poppins",sans-serif;
-    font-size:14px;
-    box-shadow:0 12px 30px rgba(216,78,130,.25);
-    cursor:pointer;
-    transition:.3s;
-}
-
-.main-btn:hover{transform:translateY(-3px);}
-.main-btn:active{transform:scale(.94);}
-
-.section-label{
-    color:#d35a86;
-    font-size:11px;
-    letter-spacing:4px;
-    text-transform:uppercase;
-    margin-bottom:14px;
-}
-
-h2{
-    font-family:"Cormorant Garamond",serif;
-    font-size:clamp(48px,12vw,78px);
-    font-weight:500;
-    color:#653348;
-    line-height:.95;
-}
-
-.description{
-    max-width:620px;
-    margin:20px auto;
-    color:#8e6878;
-    font-size:14px;
-    line-height:1.9;
-}
-
-.birthday-card{
-    max-width:650px;
-    margin:38px auto;
-    padding:45px 25px;
-    border-radius:30px;
-    background:rgba(255,255,255,.7);
-    border:1px solid rgba(255,255,255,.9);
-    backdrop-filter:blur(15px);
-    box-shadow:0 25px 70px rgba(150,55,95,.13);
-    animation:floatingCard 5s infinite ease-in-out;
-}
-
-@keyframes floatingCard{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-9px);}
-}
-
-.cake{
-    font-size:55px;
-    animation:cakeBounce 2s infinite;
-}
-
-@keyframes cakeBounce{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-8px);}
-}
-
-.birthday-card h3{
-    font-family:"Sacramento",cursive;
-    font-size:60px;
-    font-weight:400;
-    color:#dc5588;
-    margin-top:10px;
-}
-
-.birthday-card p{
-    color:#896473;
-    font-size:14px;
-    line-height:1.9;
-    margin-top:12px;
-}
-
-.chakis{
-    font-family:"Sacramento",cursive;
-    font-size:38px;
-    color:#d95084;
-    margin-top:20px;
-}
-
-.gallery{
-    margin-top:40px;
-    display:grid;
-    grid-template-columns:repeat(2,minmax(0,1fr));
-    gap:16px;
-}
-
-.photo-card{
-    position:relative;    
-    overflow:hidden;
-    border-radius:23px;
-    background:#ffdce9;
-    box-shadow:0 12px 35px rgba(150,55,90,.13);
-    transition:transform .5s ease,box-shadow .5s ease;
-    opacity:0;
-    transform:translateY(45px);
-}
-
-.photo-card.show{
-    opacity:1;
-    transform:translateY(0);
-}
-
-.photo-card img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    display:block;
-    transition:transform .8s ease;
-}
-
-.photo-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 25px 50px rgba(150,55,90,.22);
-}
-
-.photo-card:hover img{transform:scale(1.08);}
-
-.photo-caption{
-    position:absolute;
-    left:0;
-    right:0;
-    bottom:0;
-    padding:40px 12px 14px;
-    color:white;
-    font-size:12px;
-    text-align:center;
-    background:linear-gradient(transparent,rgba(70,20,40,.75));
-}
-
-.envelope-area{
-    max-width:650px;
-    margin:40px auto;
-}
-
-.envelope{
-    padding:45px 25px;
-    border-radius:28px;
-    background:linear-gradient(145deg,#ffffff,#ffe7f1);
-    box-shadow:0 25px 70px rgba(150,55,95,.14);
-    border:1px solid rgba(255,255,255,.9);
-}
-
-.envelope-icon{
-    font-size:65px;
-    animation:envelopeFloat 3s infinite ease-in-out;
-}
-
-@keyframes envelopeFloat{
-    0%,100%{transform:translateY(0) rotate(0);}
-    50%{transform:translateY(-8px) rotate(2deg);}
-}
-
-.envelope h3{
-    font-family:"Cormorant Garamond",serif;
-    font-size:35px;
-    margin:10px 0;
-}
-
-.envelope p{
-    color:#8c6676;
-    font-size:13px;
-    line-height:1.9;
-}
-
-.hidden-message{
-    display:none;
-    margin-top:30px;
-    padding:28px 10px;
-    border-top:1px solid #f1bfd1;
-    font-family:"Cormorant Garamond",serif;
-    font-size:22px;
-    line-height:1.8;
-    color:#6c3a50;
-}
-
-.hidden-message.show{
-    display:block;
-    animation:messageReveal 1.5s ease forwards;
-}
-
-@keyframes messageReveal{
-    from{opacity:0;transform:translateY(30px);}
-    to{opacity:1;transform:translateY(0);}
-}
-
-.final-section{text-align:center;}
-
-.final-heart{
-    font-size:65px;
-    animation:heartbeat 1.5s infinite;
-}
-
-@keyframes heartbeat{
-    0%,100%{transform:scale(1);}
-    15%{transform:scale(1.16);}
-    30%{transform:scale(1);}
-    45%{transform:scale(1.1);}
-}
-
-.final-title{
-    font-family:"Sacramento",cursive;
-    font-size:clamp(60px,16vw,105px);
-    color:#d95084;
-    margin-top:15px;
-}
-
-.final-text{
-    max-width:570px;
-    margin:20px auto 35px;
-    color:#896575;
-    font-size:14px;
-    line-height:2;
-}
-
-footer{
-    padding:35px 20px;
-    text-align:center;
-    color:#b48799;
-    font-size:10px;
-    letter-spacing:3px;
-}
-
-.confetti{
-    position:fixed;
-    top:-30px;
-    width:9px;
-    height:14px;
-    z-index:200;
-    pointer-events:none;
-    animation:confettiFall 3s linear forwards;
-}
-
-@keyframes confettiFall{
-    to{
-        transform:translateY(110vh) rotate(720deg);
-        opacity:0;
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
     }
-}
 
-@media(max-width:600px){
-    section{padding:75px 16px;}
-    .gallery{grid-template-columns:1fr;gap:18px;}
-    .photo-card{height:390px;border-radius:24px;}
-    .photo-caption{font-size:11px;padding:35px 10px 12px;}
-}
+    html{scroll-behavior:smooth;}
 
-@media(max-width:360px){
-    .photo-card{height:340px;}
-    .hero h1{font-size:78px;}
-    .birthday-card h3{font-size:52px;}
-}
+    body{
+        background:#fff1f7;
+        color:#542b3d;
+        font-family:"Poppins",sans-serif;
+        overflow-x:hidden;
+    }
 
-</style>
-</head>
+    .background{
+        position:fixed;
+        inset:0;
+        z-index:-20;
+        overflow:hidden;
+        background:
+        radial-gradient(circle at 10% 20%,#ffd1e4,transparent 35%),
+        radial-gradient(circle at 90% 80%,#ffc1da,transparent 35%),
+        linear-gradient(135deg,#fff9fc,#ffe7f1);
+    }
 
-<body>
+    .glow{
+        position:absolute;
+        width:300px;
+        height:300px;
+        border-radius:50%;
+        filter:blur(85px);
+        opacity:.4;
+        animation:glowMove 12s infinite alternate ease-in-out;
+    }
 
-<!-- BACKGROUND -->
+    .glow.one{
+        background:#ff8fb8;
+        top:-130px;
+        left:-100px;
+    }
 
-<div class="background">
-    <div class="glow one"></div>
-    <div class="glow two"></div>
-</div>
+    .glow.two{
+        background:#f36f9e;
+        right:-120px;
+        bottom:-130px;
+        animation-delay:3s;
+    }
 
-<div id="petals"></div>
-<div id="sparkles"></div>
+    @keyframes glowMove{
+        from{transform:translate(0,0) scale(1);}
+        to{transform:translate(50px,-40px) scale(1.25);}
+    }
 
-<!-- MUSIC -->
+    #petals{
+        position:fixed;
+        inset:0;
+        pointer-events:none;
+        z-index:5;
+        overflow:hidden;
+    }
 
-<button class="music-button" id="musicButton" onclick="toggleMusic()">🎵</button>
+    .petal{
+        position:absolute;
+        top:-30px;
+        width:11px;
+        height:18px;
+        background:#f58bb2;
+        border-radius:80% 20% 80% 20%;
+        opacity:.55;
+        animation:fall linear infinite;
+    }
 
-<audio id="bgMusic" loop>
-    <source src="music/birthday.mp3" type="audio/mpeg">
-</audio>
+    @keyframes fall{
+        from{transform:translateY(-40px) translateX(0) rotate(0deg);}
+        to{transform:translateY(110vh) translateX(100px) rotate(600deg);}
+    }
 
-<!-- HERO -->
+    #sparkles{
+        position:fixed;
+        inset:0;
+        pointer-events:none;
+        z-index:6;
+    }
 
-<section class="hero">
-    <div class="container hero-content">
+    .spark{
+        position:absolute;
+        color:white;
+        font-size:13px;
+        animation:sparkle 3s infinite ease-in-out;
+    }
 
-        <div class="mini-title">
-            A little surprise
-            <span class="eye">🧿</span>
-        </div>
+    @keyframes sparkle{
+        0%,100%{opacity:0;transform:scale(.4);}
+        50%{opacity:1;transform:scale(1.4);}
+    }
 
-        <h1>Hey,</h1>
+    .music-button{
+        position:fixed;
+        top:15px;
+        right:15px;
+        width:48px;
+        height:48px;
+        border:none;
+        border-radius:50%;
+        background:rgba(255,255,255,.88);
+        backdrop-filter:blur(12px);
+        box-shadow:0 8px 25px rgba(160,50,90,.18);
+        font-size:19px;
+        cursor:pointer;
+        z-index:100;
+        transition:.3s;
+    }
 
-        <h2 class="person-name"></h2>
+    .music-button:active{transform:scale(.88);}
 
-        <p>
-            This little corner of the internet
-            exists for one simple reason...
-            <br>
-            to make your day a little more special.
-            <span class="eye">🧿</span>
-        </p>
+    section{
+        min-height:100svh;
+        padding:75px 18px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        position:relative;
+    }
 
-        <button class="main-btn" onclick="beginExperience()">
-            ✨ Open Your Surprise
-        </button>
+    .container{
+        width:100%;
+        max-width:1000px;
+        text-align:center;
+    }
 
-        <div class="chakis">
-            For <span class="person-name"></span> 🧿
-        </div>
+    .hero{min-height:100svh;}
 
+    .hero-content{
+        animation:heroEnter 1.7s ease forwards;
+    }
+
+    @keyframes heroEnter{
+        from{opacity:0;transform:translateY(45px);}
+        to{opacity:1;transform:translateY(0);}
+    }
+
+    .mini-title{
+        font-size:11px;
+        letter-spacing:4px;
+        text-transform:uppercase;
+        color:#c4517d;
+        margin-bottom:18px;
+    }
+
+    .hero h1{
+        font-family:"Sacramento",cursive;
+        font-size:clamp(80px,21vw,150px);
+        font-weight:400;
+        line-height:.8;
+        color:#d94e82;
+        text-shadow:0 10px 30px rgba(210,70,120,.15);
+    }
+
+    .hero h2{
+        font-family:"Cormorant Garamond",serif;
+        font-size:clamp(28px,8vw,52px);
+        font-weight:500;
+        color:#633246;
+        margin-top:18px;
+    }
+
+    .hero p{
+        max-width:520px;
+        margin:25px auto;
+        color:#8e6878;
+        font-size:14px;
+        line-height:1.9;
+    }
+
+    .eye{
+        display:inline-block;
+        font-size:28px;
+        margin:0 5px;
+        animation:eyeFloat 3s infinite ease-in-out;
+    }
+
+    @keyframes eyeFloat{
+        0%,100%{transform:translateY(0);}
+        50%{transform:translateY(-6px);}
+    }
+
+    .main-btn{
+        border:none;
+        padding:15px 30px;
+        border-radius:50px;
+        background:linear-gradient(135deg,#ed709d,#d84e82);
+        color:white;
+        font-family:"Poppins",sans-serif;
+        font-size:14px;
+        box-shadow:0 12px 30px rgba(216,78,130,.25);
+        cursor:pointer;
+        transition:.3s;
+    }
+
+    .main-btn:hover{transform:translateY(-3px);}
+    .main-btn:active{transform:scale(.94);}
+
+    .section-label{
+        color:#d35a86;
+        font-size:11px;
+        letter-spacing:4px;
+        text-transform:uppercase;
+        margin-bottom:14px;
+    }
+
+    h2{
+        font-family:"Cormorant Garamond",serif;
+        font-size:clamp(48px,12vw,78px);
+        font-weight:500;
+        color:#653348;
+        line-height:.95;
+    }
+
+    .description{
+        max-width:620px;
+        margin:20px auto;
+        color:#8e6878;
+        font-size:14px;
+        line-height:1.9;
+    }
+
+    .birthday-card{
+        max-width:650px;
+        margin:38px auto;
+        padding:45px 25px;
+        border-radius:30px;
+        background:rgba(255,255,255,.7);
+        border:1px solid rgba(255,255,255,.9);
+        backdrop-filter:blur(15px);
+        box-shadow:0 25px 70px rgba(150,55,95,.13);
+        animation:floatingCard 5s infinite ease-in-out;
+    }
+
+    @keyframes floatingCard{
+        0%,100%{transform:translateY(0);}
+        50%{transform:translateY(-9px);}
+    }
+
+    .cake{
+        font-size:55px;
+        animation:cakeBounce 2s infinite;
+    }
+
+    @keyframes cakeBounce{
+        0%,100%{transform:translateY(0);}
+        50%{transform:translateY(-8px);}
+    }
+
+    .birthday-card h3{
+        font-family:"Sacramento",cursive;
+        font-size:60px;
+        font-weight:400;
+        color:#dc5588;
+        margin-top:10px;
+    }
+
+    .birthday-card p{
+        color:#896473;
+        font-size:14px;
+        line-height:1.9;
+        margin-top:12px;
+    }
+
+    .chakis{
+        font-family:"Sacramento",cursive;
+        font-size:38px;
+        color:#d95084;
+        margin-top:20px;
+    }
+
+    .gallery{
+        margin-top:40px;
+        display:grid;
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:16px;
+    }
+
+    .photo-card{
+        position:relative;    
+        overflow:hidden;
+        border-radius:23px;
+        background:#ffdce9;
+        box-shadow:0 12px 35px rgba(150,55,90,.13);
+        transition:transform .5s ease,box-shadow .5s ease;
+        opacity:0;
+        transform:translateY(45px);
+    }
+
+    .photo-card.show{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+    .photo-card img{
+        width:100%;
+        height:100%;
+        object-fit:cover;
+        display:block;
+        transition:transform .8s ease;
+    }
+
+    .photo-card:hover{
+        transform:translateY(-8px);
+        box-shadow:0 25px 50px rgba(150,55,90,.22);
+    }
+
+    .photo-card:hover img{transform:scale(1.08);}
+
+    .photo-caption{
+        position:absolute;
+        left:0;
+        right:0;
+        bottom:0;
+        padding:40px 12px 14px;
+        color:white;
+        font-size:12px;
+        text-align:center;
+        background:linear-gradient(transparent,rgba(70,20,40,.75));
+    }
+
+    .envelope-area{
+        max-width:650px;
+        margin:40px auto;
+    }
+
+    .envelope{
+        padding:45px 25px;
+        border-radius:28px;
+        background:linear-gradient(145deg,#ffffff,#ffe7f1);
+        box-shadow:0 25px 70px rgba(150,55,95,.14);
+        border:1px solid rgba(255,255,255,.9);
+    }
+
+    .envelope-icon{
+        font-size:65px;
+        animation:envelopeFloat 3s infinite ease-in-out;
+    }
+
+    @keyframes envelopeFloat{
+        0%,100%{transform:translateY(0) rotate(0);}
+        50%{transform:translateY(-8px) rotate(2deg);}
+    }
+
+    .envelope h3{
+        font-family:"Cormorant Garamond",serif;
+        font-size:35px;
+        margin:10px 0;
+    }
+
+    .envelope p{
+        color:#8c6676;
+        font-size:13px;
+        line-height:1.9;
+    }
+
+    .hidden-message{
+        display:none;
+        margin-top:30px;
+        padding:28px 10px;
+        border-top:1px solid #f1bfd1;
+        font-family:"Cormorant Garamond",serif;
+        font-size:22px;
+        line-height:1.8;
+        color:#6c3a50;
+    }
+
+    .hidden-message.show{
+        display:block;
+        animation:messageReveal 1.5s ease forwards;
+    }
+
+    @keyframes messageReveal{
+        from{opacity:0;transform:translateY(30px);}
+        to{opacity:1;transform:translateY(0);}
+    }
+
+    .final-section{text-align:center;}
+
+    .final-heart{
+        font-size:65px;
+        animation:heartbeat 1.5s infinite;
+    }
+
+    @keyframes heartbeat{
+        0%,100%{transform:scale(1);}
+        15%{transform:scale(1.16);}
+        30%{transform:scale(1);}
+        45%{transform:scale(1.1);}
+    }
+
+    .final-title{
+        font-family:"Sacramento",cursive;
+        font-size:clamp(60px,16vw,105px);
+        color:#d95084;
+        margin-top:15px;
+    }
+
+    .final-text{
+        max-width:570px;
+        margin:20px auto 35px;
+        color:#896575;
+        font-size:14px;
+        line-height:2;
+    }
+
+    footer{
+        padding:35px 20px;
+        text-align:center;
+        color:#b48799;
+        font-size:10px;
+        letter-spacing:3px;
+    }
+
+    .confetti{
+        position:fixed;
+        top:-30px;
+        width:9px;
+        height:14px;
+        z-index:200;
+        pointer-events:none;
+        animation:confettiFall 3s linear forwards;
+    }
+
+    @keyframes confettiFall{
+        to{
+            transform:translateY(110vh) rotate(720deg);
+            opacity:0;
+        }
+    }
+
+    @media(max-width:600px){
+        section{padding:75px 16px;}
+        .gallery{grid-template-columns:1fr;gap:18px;}
+        .photo-card{height:390px;border-radius:24px;}
+        .photo-caption{font-size:11px;padding:35px 10px 12px;}
+    }
+
+    @media(max-width:360px){
+        .photo-card{height:340px;}
+        .hero h1{font-size:78px;}
+        .birthday-card h3{font-size:52px;}
+    }
+
+    </style>
+    </head>
+
+    <body>
+
+    <!-- BACKGROUND -->
+
+    <div class="background">
+        <div class="glow one"></div>
+        <div class="glow two"></div>
     </div>
-</section>
 
-<!-- BIRTHDAY -->
+    <div id="petals"></div>
+    <div id="sparkles"></div>
 
-<section id="birthday">
-    <div class="container">
+    <!-- MUSIC -->
 
-        <div class="section-label">A special day 🧿</div>
+    <button class="music-button" id="musicButton" onclick="toggleMusic()">🎵</button>
 
-        <h2>Today Is Yours</h2>
+    <audio id="bgMusic" loop>
+        <source src="music/birthday.mp3" type="audio/mpeg">
+    </audio>
 
-        <p class="description">
-            Some days arrive quietly.
-            <br>
-            And then there are days that deserve
-            a little extra sparkle.
-        </p>
+    <!-- HERO -->
 
-        <div class="birthday-card">
+    <section class="hero">
+        <div class="container hero-content">
 
-            <div class="cake">🎂</div>
+            <div class="mini-title">
+                With lotssss of loveee 💖,                
+            </div>
 
-            <h3>Happy Birthday!</h3>
+            <h1>Happy Birthdayyy</h1>
+
+            <h2>Nikhithaa</h2>
 
             <p>
-                May this year bring you beautiful
-                surprises, peaceful moments,
-                unforgettable memories,
-                and plenty of reasons to smile.
+                Hope this day of yours is filled with joy,
+                and unlimited happines.
+                <br>
+                And hehe I also hope, this lil effort of mine, makes it memorable for you lol.
             </p>
 
+            <button class="main-btn" onclick="beginExperience()">
+                  Open Your Surpriseee!!!!
+            </button>
+
             <div class="chakis">
-                Happy Birthday, <span class="person-name"></span> 🌸🧿
+                Loveee youuuu, lol.</span>💖
             </div>
 
         </div>
+    </section>
 
-        <button class="main-btn" onclick="goTo('memories')">
-            📸 See the little memories
-        </button>
+    <!-- BIRTHDAY -->
 
-    </div>
-</section>
+    <section id="birthday">
+        <div class="container">
 
-<!-- MEMORIES -->
+            <h2>It's your dayyyyy!!!</h2>
 
-<section id="memories">
-    <div class="container">
+            <p class="description">
+                Last year, on this day, it was just a normal wish. But now, see where the time has brought us. 
+                <br>
+                I don't know what more to say now lol, will say it in the last. Now keep scrolling.
+            </p>
 
-        <div class="section-label">Little moments 🧿</div>
+            <div class="birthday-card">
+               
 
-        <h2>Moments Worth Keeping</h2>
-
-        <p class="description">
-            Thirty-seven little windows
-            into some beautiful moments.
-            <br>
-            Take your time, <span class="person-name"></span>. 🌸
-        </p>
-
-        <div class="gallery" id="gallery"></div>
-
-        <br><br>
-
-        <div class="chakis">
-            Still scrolling, <span class="person-name"></span>? 🧿
-        </div>
-
-        <br>
-
-        <button class="main-btn" onclick="goTo('message')">
-            💌 There's Something Else
-        </button>
-
-    </div>
-</section>
-
-<!-- MESSAGE -->
-
-<section id="message">
-    <div class="container">
-
-        <div class="section-label">One last thing 🧿</div>
-
-        <h2>You Found It 💌</h2>
-
-        <p class="description">
-            Well... since you've come this far,
-            there's one more little thing waiting.
-        </p>
-
-        <div class="envelope-area">
-            <div class="envelope">
-
-                <div class="envelope-icon">💌</div>
-
-                <h3>
-                    A message for <span class="person-name"></span>
-                </h3>
+                <h3>Happyy Birthdayy!</h3>
 
                 <p>
-                    Tap the button when you're ready.
-                    <br>🧿
+                    May this year bring you beautiful
+                    surprises, peaceful moments,
+                    unforgettable memories,
+                    and plenty of reasons to smile.
                 </p>
+                <p>(cuz gosh, I love your smile sooo fucking much.)</p>
+                
+            
 
+            </div>
+            <div class="section-label">(And btw, you are toooo beautifullll, so this👇)</div>
+            <button class="main-btn" onclick="goTo('memories')">
+                Click here!!!
+            </button>
+
+        </div>
+    </section>
+
+    <!-- MEMORIES -->
+
+    <section id="memories">
+        <div class="container">
+
+            
+            <h2>Keep smilinggg bbg!!!🤭</h2>
+
+            <p class="description">
+                This why I used to save all your pics to gallery lol.😂
                 <br>
+                Everything I had, everything you had sent, is here🥰 
+                <br>
+                (I have missed some tho, I wanted to add everything, but was in ooru alva, so) 
+            </p>
 
-                <button class="main-btn" onclick="openMessage()">
-                    Open 💗
-                </button>
+            <div class="gallery" id="gallery"></div>
 
-                <div class="hidden-message" id="hiddenMessage">
+            <br><br>
 
-                    <p>
-                        Some people have a way of making
-                        ordinary days feel a little brighter.
-                    </p>
+            <div class="chakis">
+                Few more things that I wanted to say, here👇
+            </div>
+
+            <br>
+
+            <button class="main-btn" onclick="goTo('message')">
+                Click Click Click!!
+            </button>
+
+        </div>
+    </section>
+
+    <!-- MESSAGE -->
+
+    <section id="message">
+        <div class="container">
+
+            <div class="section-label">(Your smile is precious btw)🤗</div>
+
+            <h2>Heree you goo!🤭</h2>
+
+            <p class="description">
+                I am so afraid to say all this yk. Not like scared anol, but those butterflies.😭
+            </p>
+
+            <div class="envelope-area">
+                <div class="envelope">
+
+                    <div class="envelope-icon">💌</div>
+
+                    <h3>
+                        A message for youuu!!!></span>
+                    </h3>
 
                     <br>
 
-                    <p>
-                        Some moments become memories
-                        without us even realizing it.
-                    </p>
+                    <button class="main-btn" onclick="openMessage()">
+                        Open 💗
+                    </button>
 
-                    <br>
+                    <div class="hidden-message" id="hiddenMessage">
 
-                    <p>
-                        And some people quietly become
-                        important simply by being themselves.
-                    </p>
+                        <p>
+                            When I saw you for the first time, something did make me look twice at you. You were attractive and good looking.
+                            I told myself not to bother much as I felt it was just some mild crush. So, nothing happened. 
+                            And then boom, you texted me, we talked, and thanks to Spiderman, he brought us close, haha. 
+                        </p>
 
-                    <br>
+                        <br>
 
-                    <p>
-                        So today, <span class="person-name"></span>,
-                        I hope you get all the happiness you deserve.
-                    </p>
+                        <p>
+                            We kept talking, we became good friends, a then a lil dirty haha, and now after two whole years, we are here, I don't know what caused this but I'm so much attached to you. I keep thinking about you always.
+                            I am worried about you always, when you don't text immediately, my heart goes crazy, it starts to overthink. Not a moment goes by without thinking about you.
+                            I never anticipated anything like this would happen to me, but my heart was weak. You have driven me crazy for real. I have changed so much because of you.
+                        </p>
 
-                    <br>
+                        <br>
+                        <p>
+                            You know, I feel much more motivated to do something, than I was last year. I want to achieve something, if not for me, but for you. I want to be the man you deserve. Be it in academics, looks, physique or anything else.
+                            I want you all by myself. I want to provide you with everything you deserve, everything you wish for, I want to make you smile. I want to be there for you all the time, and I want to be the reason for your happiness throughout your life.
+                            And, I want you to achieve all your dreams, and I want to be the one who supports you for it. I want us to never seperate and be there for eachother. I want us to forgive eachother's flaws and respect eachother for what we are. I promise to never leave you and will always stay beside you.
+                            I'd rather break my heart than breaking yours. Because, all I want is for you to be happy. 
+                            
+                        </p>
+                        <br>
+                        <p>
+                            So on this day Nikhitha,
+                            I propose you. I want you to be mine, I want our hearts to accept each other.
+                        </p>
 
-                    <p>
-                        Keep smiling.
-                        Keep being you.
-                        And make this year unforgettable. 🧿
-                    </p>
+                        <br>
 
+                        <p>
+                            I want us to be in love, as I love you and love you so much.
+                        </p>
+
+                    </div>
                 </div>
             </div>
+
+            <button class="main-btn" onclick="goTo('final')">
+                And, here's something that I wrote.
+            </button>
+
         </div>
+    </section>
 
-        <button class="main-btn" onclick="goTo('final')">
-            ✨ One More Surprise
-        </button>
+    <!-- FINAL -->
 
-    </div>
-</section>
+    <section id="final" class="final-section">
+        <div class="container">
 
-<!-- FINAL -->
+            <div class="final-heart">💗</div>
 
-<section id="final" class="final-section">
-    <div class="container">
+            <div class="section-label">A few more lines, lol.</div>
 
-        <div class="final-heart">💗</div>
+            <div class="final-title">Happy Birthday Once Again!!!</div>
 
-        <div class="section-label">Before you go 🧿</div>
+            <p class="final-text">
+                It began as friendship, the journey so divine,<br>
+Yet something deep stirred in this heart of mine.<br>
+Through every waking hour and through every sleepless night,<br>
+You are the universe that fills my sky with light.<br>
+Even when my sleepy eyes surrender to the night,<br>
+My dreams still seek your presence as my heart holds you tight.<br><br>
 
-        <div class="final-title">Happy Birthday</div>
+I have drowned beneath the waves of your beautiful grace,<br>
+And have drunk the sweetest poison of love, leaving no trace.<br>
+An unknown spark has blossomed deep in my heart,<br>
+One beautiful disaster, tearing me apart.<br>
+And I also do fear that I might lose the one I never knew I'd need,<br>
+For where else shall I find the peace, that your presence used to breed.<br><br>
 
-        <p class="final-text">
-            Some people deserve more than
-            just a birthday wish.
-            <br><br>
-            So here's a tiny little corner of the internet,
-            made just to make today a little more special.
-            <br><br>
-            I hope you smile when you look back at this.
-            <br><br>
-            Stay happy, <span class="person-name"></span>. 🌸🧿
-        </p>
+For all my life, I'd wish to see you smile,<br>
+And bear your every sorrow, mile after mile.<br>
+I'd turn your every wish into reality,<br>
+And fill your darkest hours with endless serenity.<br>
+For every breath you take, through every passing day,<br>
+I'd give you a thousand reasons to smile along the way.<br><br>
 
-        <button class="main-btn" onclick="celebrate()">
-            🎉 One Last Click
-        </button>
+I can no longer keep this secret locked inside,<br>
+As my heart, no longer wants to hide.<br>
+Whether you choose me or let me drift away,<br>
+This truth shall ever remain, come what may.<br><br>
 
-        <div id="finalMessage"
-        style="margin-top:25px;font-family:'Sacramento';font-size:38px;color:#d95084;">
+Now this restless heart has fallen silent at last,<br>
+For every hidden feeling has escaped into the past.<br>
+I've laid my soul before you, with nothing left to conceal,<br>
+And I await only your gestures, your answer and your reveal.<br>
+Just show me the path, to wherever it leads,<br>
+I'll walk beside you, hand in hand, even if my heart bleeds.<br><br>
+            </p>
+
+            <button class="main-btn" onclick="celebrate()">
+                🎉 One Last Click
+            </button>
+
+            <div id="finalMessage"
+            style="margin-top:25px;font-family:'Sacramento';font-size:38px;color:#d95084;">
+            </div>
+
         </div>
+    </section>
 
-    </div>
-</section>
+    <footer>
+        FOR NIKHII</span> 🧿
+        &nbsp; • &nbsp;
+        MADE WITH EXTRA LOVE.
+    </footer>
 
-<footer>
-    FOR <span class="person-name"></span> 🧿
-    &nbsp; • &nbsp;
-    MADE WITH A LITTLE EXTRA THOUGHT 🌸
-</footer>
+    <script>
 
-<script>
+    /* ==========================================
+    PERSONALIZE YOUR BIRTHDAY WEBSITE HERE
+    ========================================== */
 
-/* ==========================================
-   PERSONALIZE YOUR BIRTHDAY WEBSITE HERE
-   ========================================== */
+    const personName = "Nikhitha";
 
-const personName = "YOUR NAME";
+    const photoCaptions = [
+        "Can't be more pretty. ✨",
+        "One worth keeping 🌸",
+        "Your smile, uff 🧿",
+        "You so divine ✨",
+        "Just because 🌷",
+        "Prettiest Woman 💕",
+        "Still smiling 🌸",
+        "Your glance 🧿",
+        "Pretty lil baby, lol 💗",
+        "One more ✨",
+        "Another one 🌷",
+        "You are damn gorgeous. 🧿",
+        "A good one 🌸",
+        "One of the special ones ✨",
+        "A place in my heart💗",
+        "Can't stop admiring 🌷",
+        "Another favourite 🌸",
+        "Can't take my eye off you 🧿",
+        "Beautifulll🦋",
+        "Just a little something ✨",
+        "I mean, look at youu!!!🌸",
+        "Feel like crying🧿",
+        "A little happiness 💕",
+        "One for the collection 🌷",
+        "Worth keeping ✨",
+        "Another favourite 🌸",
+        "A good one 🧿",
+        "This one had to be here 🌷",
+        "A little sparkle ✨",
+        "Another one 💕",
+        "Need more like this 🌸",
+        "Sleepy moments 🧿",
+        "Almost there ✨",
+        "Another little memory 💗",
+        "One more 🌷",
+        "Myyy mossssttt favoriteee🌸",
+        "And finally... 🧿💕"
+    ];
 
-const photoCaptions = [
-    "A little moment ✨",
-    "One worth keeping 🌸",
-    "A favourite memory 🧿",
-    "A special moment ✨",
-    "Just because 🌷",
-    "A beautiful memory 💕",
-    "Still smiling 🌸",
-    "This deserved a place here 🧿",
-    "A little memory 💗",
-    "One more ✨",
-    "Another little moment 🌷",
-    "Worth remembering 🧿",
-    "A good one 🌸",
-    "One of the special ones ✨",
-    "Together 🧿💗",
-    "A tiny piece of today 🌷",
-    "Another favourite 🌸",
-    "This one belongs here 🧿",
-    "A moment to remember 🦋",
-    "Just a little something ✨",
-    "One more memory 🌸",
-    "This made the list 🧿",
-    "A little happiness 💕",
-    "One for the collection 🌷",
-    "A moment worth keeping ✨",
-    "Another favourite 🌸",
-    "Still a good one 🧿",
-    "This one had to be here 🌷",
-    "A little sparkle ✨",
-    "Another one 💕",
-    "A moment like this 🌸",
-    "Sleepy moments 🧿",
-    "Almost there ✨",
-    "Another little memory 💗",
-    "One more 🌷",
-    "Almost the end 🌸",
-    "And finally... 🧿💕"
-];
+    /* ==========================================
+    UPDATE NAME AUTOMATICALLY
+    ========================================== */
 
-/* ==========================================
-   UPDATE NAME AUTOMATICALLY
-   ========================================== */
+    document.querySelectorAll(".person-name").forEach(element => {
+        element.textContent = personName;
+    });
 
-document.querySelectorAll(".person-name").forEach(element => {
-    element.textContent = personName;
-});
+    document.title = `For ${personName} 🌸🧿`;
 
-document.title = `For ${personName} 🌸🧿`;
+    /* ==========================================
+    CREATE 37 PHOTO CARDS AUTOMATICALLY
+    ========================================== */
 
-/* ==========================================
-   CREATE 37 PHOTO CARDS AUTOMATICALLY
-   ========================================== */
+    const gallery = document.getElementById("gallery");
 
-const gallery = document.getElementById("gallery");
+    photoCaptions.forEach((caption, index) => {
 
-photoCaptions.forEach((caption, index) => {
+        const photoNumber = index + 1;
 
-    const photoNumber = index + 1;
+        const card = document.createElement("div");
+        card.className = "photo-card";
 
-    const card = document.createElement("div");
-    card.className = "photo-card";
+        const img = document.createElement("img");
+        img.src = `photos/photo${photoNumber}.gif`;    
+        img.alt = `Memory ${photoNumber}`;
+        img.loading = "lazy";
 
-    const img = document.createElement("img");
-    img.src = `photos/photo${photoNumber}.gif`;
-    
-    img.alt = `Memory ${photoNumber}`;
-    img.loading = "lazy";
+        const captionElement = document.createElement("div");
+        captionElement.className = "photo-caption";
+        captionElement.textContent = caption;
 
-    const captionElement = document.createElement("div");
-    captionElement.className = "photo-caption";
-    captionElement.textContent = caption;
+        card.appendChild(img);
+        card.appendChild(captionElement);
 
-    card.appendChild(img);
-    card.appendChild(captionElement);
-
-    gallery.appendChild(card);
-
-});
-
-/* ==========================================
-   PETALS
-   ========================================== */
-
-const petals = document.getElementById("petals");
-
-for(let i=0;i<35;i++){
-
-    const petal = document.createElement("div");
-
-    petal.className = "petal";
-
-    petal.style.left = Math.random()*100+"%";
-    petal.style.animationDuration = (7+Math.random()*8)+"s";
-    petal.style.animationDelay = Math.random()*8+"s";
-    petal.style.opacity = .25+Math.random()*.5;
-
-    petals.appendChild(petal);
-}
-
-/* ==========================================
-   SPARKLES
-   ========================================== */
-
-const sparkleContainer = document.getElementById("sparkles");
-
-for(let i=0;i<45;i++){
-
-    const sparkle = document.createElement("div");
-
-    sparkle.className = "spark";
-    sparkle.innerHTML = "✦";
-
-    sparkle.style.left = Math.random()*100+"%";
-    sparkle.style.top = Math.random()*100+"%";
-    sparkle.style.animationDelay = Math.random()*4+"s";
-
-    sparkleContainer.appendChild(sparkle);
-}
-
-/* ==========================================
-   START EXPERIENCE
-   ========================================== */
-
-function beginExperience(){
-
-    goTo("birthday");
-    createConfetti();
-
-}
-
-/* ==========================================
-   SCROLL
-   ========================================== */
-
-function goTo(id){
-
-    const element = document.getElementById(id);
-
-    if(element){
-
-        element.scrollIntoView({
-            behavior:"smooth"
-        });
-
-    }
-
-}
-
-/* ==========================================
-   PHOTO ANIMATION
-   ========================================== */
-
-const photoCards = document.querySelectorAll(".photo-card");
-
-const observer = new IntersectionObserver(
-
-function(entries){
-
-    entries.forEach(function(entry){
-
-        if(entry.isIntersecting){
-
-            entry.target.classList.add("show");
-
-            observer.unobserve(entry.target);
-
-        }
+        gallery.appendChild(card);
 
     });
 
-},
+    /* ==========================================
+    PETALS
+    ========================================== */
 
-{threshold:.12}
+    const petals = document.getElementById("petals");
 
-);
+    for(let i=0;i<35;i++){
 
-photoCards.forEach(card => observer.observe(card));
+        const petal = document.createElement("div");
 
-/* ==========================================
-   OPEN MESSAGE
-   ========================================== */
+        petal.className = "petal";
 
-function openMessage(){
+        petal.style.left = Math.random()*100+"%";
+        petal.style.animationDuration = (7+Math.random()*8)+"s";
+        petal.style.animationDelay = Math.random()*8+"s";
+        petal.style.opacity = .25+Math.random()*.5;
 
-    const message = document.getElementById("hiddenMessage");
+        petals.appendChild(petal);
+    }
 
-    message.classList.add("show");
+    /* ==========================================
+    SPARKLES
+    ========================================== */
 
-    createConfetti();
+    const sparkleContainer = document.getElementById("sparkles");
 
-}
+    for(let i=0;i<45;i++){
 
-/* ==========================================
-   CONFETTI
-   ========================================== */
+        const sparkle = document.createElement("div");
 
-function createConfetti(){
+        sparkle.className = "spark";
+        sparkle.innerHTML = "✦";
 
-    const symbols = [
-        "💗","🌸","✨","🎀","💕","🌷","🦋","🧿"
-    ];
+        sparkle.style.left = Math.random()*100+"%";
+        sparkle.style.top = Math.random()*100+"%";
+        sparkle.style.animationDelay = Math.random()*4+"s";
 
-    for(let i=0;i<50;i++){
+        sparkleContainer.appendChild(sparkle);
+    }
 
-        const piece = document.createElement("div");
+    /* ==========================================
+    START EXPERIENCE
+    ========================================== */
 
-        piece.className = "confetti";
+    function beginExperience(){
 
-        piece.innerHTML = symbols[
-            Math.floor(Math.random()*symbols.length)
-        ];
-
-        piece.style.left = Math.random()*100+"%";
-        piece.style.fontSize = (10+Math.random()*16)+"px";
-        piece.style.animationDuration = (2+Math.random()*2)+"s";
-
-        document.body.appendChild(piece);
-
-        setTimeout(function(){
-            piece.remove();
-        },4500);
+        goTo("birthday");
+        createConfetti();
 
     }
 
-}
+    /* ==========================================
+    SCROLL
+    ========================================== */
 
-/* ==========================================
-   FINAL SURPRISE
-   ========================================== */
+    function goTo(id){
 
-function celebrate(){
+        const element = document.getElementById(id);
 
-    createConfetti();
+        if(element){
 
-    const final = document.getElementById("finalMessage");
+            element.scrollIntoView({
+                behavior:"smooth"
+            });
 
-    final.innerHTML = `Keep smiling, ${personName}. 🌸`;
-
-    setTimeout(function(){
-
-        final.innerHTML = "And have the happiest birthday. 🧿💗";
-
-    },1800);
-
-}
-
-/* ==========================================
-   MUSIC
-   ========================================== */
-
-let musicPlaying = false;
-
-function toggleMusic(){
-
-    const music = document.getElementById("bgMusic");
-
-    const button = document.getElementById("musicButton");
-
-    if(musicPlaying){
-
-        music.pause();
-
-        button.innerHTML = "🎵";
-
-        musicPlaying = false;
+        }
 
     }
 
-    else{
+    /* ==========================================
+    PHOTO ANIMATION
+    ========================================== */
 
-        music.play()
+    const photoCards = document.querySelectorAll(".photo-card");
 
-        .then(function(){
+    const observer = new IntersectionObserver(
 
-            button.innerHTML = "🔊";
+    function(entries){
 
-            musicPlaying = true;
+        entries.forEach(function(entry){
 
-        })
+            if(entry.isIntersecting){
 
-        .catch(function(){
+                entry.target.classList.add("show");
 
-            alert("Please check your music file and try again.");
+                observer.unobserve(entry.target);
+
+            }
 
         });
 
+    },
+
+    {threshold:.12}
+
+    );
+
+    photoCards.forEach(card => observer.observe(card));
+
+    /* ==========================================
+    OPEN MESSAGE
+    ========================================== */
+
+    function openMessage(){
+
+        const message = document.getElementById("hiddenMessage");
+
+        message.classList.add("show");
+
+        createConfetti();
+
     }
 
-}
+    /* ==========================================
+    CONFETTI
+    ========================================== */
 
-</script>
+    function createConfetti(){
 
-</body>
-</html>
+        const symbols = [
+            "💗","🌸","✨","🎀","💕","🌷","🦋","🧿"
+        ];
+
+        for(let i=0;i<50;i++){
+
+            const piece = document.createElement("div");
+
+            piece.className = "confetti";
+
+            piece.innerHTML = symbols[
+                Math.floor(Math.random()*symbols.length)
+            ];
+
+            piece.style.left = Math.random()*100+"%";
+            piece.style.fontSize = (10+Math.random()*16)+"px";
+            piece.style.animationDuration = (2+Math.random()*2)+"s";
+
+            document.body.appendChild(piece);
+
+            setTimeout(function(){
+                piece.remove();
+            },4500);
+
+        }
+
+    }
+
+    /* ==========================================
+    FINAL SURPRISE
+    ========================================== */
+
+    function celebrate(){
+
+        createConfetti();
+
+        const final = document.getElementById("finalMessage");
+
+        final.innerHTML = `Keep smiling, Nikhiii.`;
+
+        setTimeout(function(){
+
+            final.innerHTML = "And have the happiest birthday. 🧿💗";
+
+        },1800);
+
+    }
+
+    /* ==========================================
+    MUSIC
+    ========================================== */
+
+    let musicPlaying = false;
+
+    function toggleMusic(){
+
+        const music = document.getElementById("bgMusic");
+
+        const button = document.getElementById("musicButton");
+
+        if(musicPlaying){
+
+            music.pause();
+
+            button.innerHTML = "🎵";
+
+            musicPlaying = false;
+
+        }
+
+        else{
+
+            music.play()
+
+            .then(function(){
+
+                button.innerHTML = "🔊";
+
+                musicPlaying = true;
+
+            })
+
+            .catch(function(){
+
+                alert("Please check your music file and try again.");
+
+            });
+
+        }
+
+    }
+
+    </script>
+
+    </body>
+    </html>
